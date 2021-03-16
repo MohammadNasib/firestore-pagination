@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Practice</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="query">
+        <h1 style="text-align: center">This is my Firebase Practice</h1>
+        <form action="#" id="cafeForm">
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Cafe name"
+            required
+          />
+
+          <input
+            id="city"
+            name="city"
+            type="text"
+            placeholder="City"
+            required
+          />
+
+          <button type="submit" class="btn">Add Cafe</button>
+        </form>
+
+        <div class="content">
+          <ul id="cafeList"></ul>
+
+          <div class="loading ">Loading More...</div>
+        </div>
+
+        <button type="submit" id="loadBtn">Load More...</button>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyARy3jVYGKgFX6JnRtEcM6v28zDbGW9SK0",
+        authDomain: "fir-practice-5fbc5.firebaseapp.com",
+        projectId: "fir-practice-5fbc5",
+        storageBucket: "fir-practice-5fbc5.appspot.com",
+        messagingSenderId: "779465515076",
+        appId: "1:779465515076:web:4db332274093e6df885c11",
+        measurementId: "G-8TG3JQTT6X",
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+    </script>
+
+    <!-- <script src="./firestore.js"></script> -->
+    <script src="./firestore-pagination.js"></script>
+  </body>
+</html>
